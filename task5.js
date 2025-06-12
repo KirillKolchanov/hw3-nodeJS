@@ -18,3 +18,25 @@ getNextDoubled(); // 2
 getNextDoubled(); // 4
 getNextDoubled(); // 6
 getNextDoubled(); // undefined
+
+const fibonacciGenerator = () => {
+  let prev = 0;
+  let current = 1;
+
+  return function () {
+    const result = prev;
+    const next = prev + current;
+    prev = current;
+    current = next;
+
+    return result;
+  };
+};
+
+const getNextFibonacci = fibonacciGenerator();
+
+getNextFibonacci(); // 0
+getNextFibonacci(); // 1
+getNextFibonacci(); // 1
+getNextFibonacci(); // 2
+getNextFibonacci(); // 3
