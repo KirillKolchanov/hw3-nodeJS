@@ -4,3 +4,10 @@ const calculateFactorial = (number) => {
 };
 
 calculateFactorial(5);
+
+const power = (base, exponent) => {
+  if (exponent < 1) return 1;
+  return base * power(base, exponent - 1);
+};
+
+power(2, 3);
